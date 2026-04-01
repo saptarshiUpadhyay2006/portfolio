@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight,Quote} from "lucide-react";
 import { useState } from "react";
 const testdata = [
     {
-      author: "Sarah",
+      author: "Arnob",
       role: "Web Development Lead, ACM JU Chapter",
       quote:
         "Saptarshi has been a reliable and detail-oriented Web Developer in our ACM JU Chapter. He follows best practices, adapts quickly to new tools, and consistently contributes clean, responsive components that strengthen our overall web presence",
