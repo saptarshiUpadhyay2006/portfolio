@@ -117,7 +117,7 @@ export const Projects = () => {
                 {/* View All CTA */}
                 <div className="text-center mt-12 animate-fade-in animation-delay-500">
                     <a
-                        href="https://github.com/Spuk2006-glitch"
+                        href="https://github.com/saptarshiUpadhyay2006"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
