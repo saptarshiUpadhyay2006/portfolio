@@ -1,5 +1,13 @@
 const experiences=[
     {
+        period:"March 2026 - Present",
+        role:"SDE Intern",
+        company:"Aarish AI Technologies Inc. Remote",
+        description:"Contributed to a LORROS defence project by developing full-stack solutions using REST APIs, secure architecture, and scalable system design. Worked with high-performance, AI-integrated applications with focus on real-time processing, optimization, and efficient data handling. Collaborated in an agile environment to design, debug, and deploy reliable, mission-critical systems.",
+        technologies:["Full-Stack","REST APIs","AI Integration","Agile"],
+        current:true,
+    },
+    {
         period:"2025-present",
         role:"Web Developer",
         company:"ACM JU Chapter",

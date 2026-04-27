@@ -2,7 +2,15 @@ import { ChevronLeft, ChevronRight,Quote} from "lucide-react";
 import { useState } from "react";
 const testdata = [
     {
-      author: "Arnob",
+      author: "Asit",
+      role: "Tech Lead, Aarish Tech",
+      quote:
+        "Saptarshi showed strong debugging and problem-solving skills while working on our LORROS defence project. He quickly identified issues in complex full-stack and API workflows and resolved them with efficient, well-structured solutions. His ability to optimize real-time, AI-integrated systems and ensure reliability under pressure was impressive. He consistently contributed to stable and scalable deployments in an agile environment.",
+      avatar:
+        "/asit.png",
+    },
+    {
+      author: "Sarah",
       role: "Web Development Lead, ACM JU Chapter",
       quote:
         "Saptarshi has been a reliable and detail-oriented Web Developer in our ACM JU Chapter. He follows best practices, adapts quickly to new tools, and consistently contributes clean, responsive components that strengthen our overall web presence",
