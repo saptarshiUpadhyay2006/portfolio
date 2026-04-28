@@ -1,3 +1,6 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { SectionBackground } from "@/components/SectionBackground";
+
 const experiences = [
     {
         period: "March 2026 - Present",
@@ -34,27 +37,25 @@ const experiences = [
 ]
 
 export const Experience = () => {
+    const [ref, isVisible] = useScrollReveal();
     return (
-        <section id="experience" className="py-32 relative overflow-hidden">
+        <section id="experience" ref={ref} className="py-32 relative overflow-hidden">
+            <SectionBackground />
             <div className="absolute top-1/2 left-1/4 w-96
-       h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2"/>
+        h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 z-0"/>
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-3xl mb-16">
-                    <span className="text-secondary-foreground text-sm
-                    font-medium tracking-wider uppercase animate-fade-in">
+                    <span className={`text-secondary-foreground text-sm font-medium tracking-wider uppercase opacity-0 ${isVisible ? 'animate-slide-up' : ''}`}>
                         Career Journey
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold
-                    mt-4 mb-6 animate-fade-in animation-delay-100
-                    text-secondary-foreground">
+                    <h2 className={`text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground opacity-0 ${isVisible ? 'animate-slide-right animation-delay-100' : ''}`}>
                         Beyond the
                         <span
                             className="font-serif italic font-normal text-white"> Classroom
                         </span>
                     </h2>
 
-                    <p className="text-muted-foreground
-           animate-fade-in animation-delay-200">
+                    <p className={`text-muted-foreground opacity-0 ${isVisible ? 'animate-slide-up animation-delay-200' : ''}`}>
                         A snapshot of my journey from a motivated learner to a hands-on developer—combining strong computer science fundamentals with real-world experience in web development, student leadership, and building impactful, full-stack and AI-driven projects.
                     </p>
                 </div>
@@ -66,7 +67,7 @@ export const Experience = () => {
                     {/* Experience contents */}
                     <div className="space-y-12">
                         {experiences.map((exp, idx) => (
-                            <div key={idx} className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
+                            <div key={idx} className={`relative grid md:grid-cols-2 gap-8 opacity-0 ${isVisible ? 'animate-slide-up' : ''}`}
                                 style={{ animationDelay: `${(idx + 1) * 150}ms` }}>
                                 {/* Timeline dot */}
                                 <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">

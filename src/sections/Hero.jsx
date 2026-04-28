@@ -60,8 +60,8 @@ export const Hero=()=>{
 
                 {/* Headline */}
                 <div className="space-y-4">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                    Designing <span className="text-gradient glow-text">scalable</span>
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-slide-up animation-delay-100">
+                    Designing <span className="text-gradient glow-text animate-text-gradient">scalable</span>
                     <br />
                     web systems with
                     <br />
@@ -78,7 +78,7 @@ export const Hero=()=>{
                 </div>
 
                 {/* CTA */}
-                <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                <div className="flex flex-wrap gap-4 animate-slide-up animation-delay-300">
                   <Button size="lg">
                     Contact Me<ArrowRight className="w-5 h-5"/>
                   </Button>
@@ -91,7 +91,7 @@ export const Hero=()=>{
                 </div>
 
                 {/* Socials div*/}
-                <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                <div className="flex items-center gap-4 animate-slide-up animation-delay-400">
                   <span className="text-sm text-muted-foreground">Follow me:</span>
                   {[
                     {icon:Github,href:"https://github.com/Spuk2006-glitch"},
@@ -105,7 +105,7 @@ export const Hero=()=>{
               </div>
 
               {/* Profile Image */}
-              <div className="relative animate-fade-in animation-delay-300">
+              <div className="relative animate-scale-in animation-delay-300">
                 <div className="relative max-w-md mx-auto">
                   <div
                     className="absolute inset-0 
@@ -139,7 +139,7 @@ export const Hero=()=>{
             </div>
 
             {/* Skills div */}
-            <div className="mt-20 animate-fade-in animation-delay-600">
+            <div className="mt-20 animate-slide-up animation-delay-600">
               <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
               <div className="relative overflow-hidden">
                 <div className="flex animate-marquee">

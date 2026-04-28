@@ -1,5 +1,7 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { SectionBackground } from "@/components/SectionBackground";
 
 const projects = [
     {
@@ -37,23 +39,26 @@ const projects = [
 ]
 
 export const Projects = () => {
+    const [ref, isVisible] = useScrollReveal();
+
     return (
-        <section id="projects" className="py-32 relative overflow-hidden">
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+        <section id="projects" ref={ref} className="py-32 relative overflow-hidden">
+            <SectionBackground />
+            <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl z-0" />
+            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl z-0" />
             <div className="container mx-auto px-6 relative z-10">
 
                 {/* Section padding */}
                 <div className="text-center mx-auto max-w-3xl mb-16">
-                    <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+                    <span className={`text-secondary-foreground text-sm font-medium tracking-wider uppercase opacity-0 ${isVisible ? 'animate-slide-up' : ''}`}>
                         Featured Work
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+                    <h2 className={`text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground opacity-0 ${isVisible ? 'animate-slide-up animation-delay-100' : ''}`}>
                         Projects That
                         <span className="font-serif italic font-normal text-white"> Drive Impact.
                         </span>
                     </h2>
-                    <p className="text-muted-foreground animate-fade-in animation-delay-200">
+                    <p className={`text-muted-foreground opacity-0 ${isVisible ? 'animate-fade-in animation-delay-200' : ''}`}>
                         A showcase of my recent work—building scalable web apps and innovative tools that tackle real-world problems.
                     </p>
                 </div>
@@ -61,7 +66,7 @@ export const Projects = () => {
                 {/* Projects Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, idx) => (
-                        <div key={idx} className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 hover-lift"
+                        <div key={idx} className={`group glass rounded-2xl overflow-hidden md:row-span-1 hover-lift opacity-0 ${isVisible ? 'animate-slide-up' : ''}`}
                             style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                         >
                             <div className="relative overflow-hidden aspect-video">
@@ -115,7 +120,7 @@ export const Projects = () => {
                 </div>
 
                 {/* View All CTA */}
-                <div className="text-center mt-12 animate-fade-in animation-delay-500">
+                <div className={`text-center mt-12 opacity-0 ${isVisible ? 'animate-scale-in animation-delay-500' : ''}`}>
                     <a
                         href="https://github.com/saptarshiUpadhyay2006"
                         target="_blank"

@@ -1,4 +1,6 @@
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { SectionBackground } from "@/components/SectionBackground";
 
 const highlights = [
     {
@@ -28,21 +30,24 @@ const highlights = [
 ];
 
 export const About=()=>{
+    const [ref, isVisible] = useScrollReveal();
+
     return (
-        <section id="about"className="py-32 relative overflow-hidden">
+        <section id="about" ref={ref} className="py-32 relative overflow-hidden">
+            <SectionBackground />
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-8">
-                        <div className="animate-fade-in">
+                        <div className={`opacity-0 ${isVisible ? 'animate-slide-right' : ''}`}>
                             <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">About Me</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
+                        <h2 className={`text-4xl md:text-5xl font-bold leading-tight text-secondary-foreground opacity-0 ${isVisible ? 'animate-slide-right animation-delay-100' : ''}`}>
                             Building Software
                             <span className="font-serif italic font-normal text-white"> with clarity, purpose, and scale.</span>
                         </h2>
 
-                        <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+                        <div className={`space-y-4 text-muted-foreground opacity-0 ${isVisible ? 'animate-slide-up animation-delay-200' : ''}`}>
                             <p>
                             I’m Saptarshi Upadhyay, a full-stack software developer with hands-on experience building scalable web applications and intelligent systems. My work spans modern frontend development with React and TypeScript, robust backend systems using Node.js and Express, and cloud-ready deployments leveraging tools like Docker, AWS, and Vercel. I focus on writing clean, maintainable code and designing systems that are both performant and easy to evolve.
                             </p>
@@ -51,7 +56,7 @@ export const About=()=>{
                             </p>
                         </div>
 
-                        <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
+                        <div className={`glass rounded-2xl p-6 glow-border opacity-0 ${isVisible ? 'animate-scale-in animation-delay-300' : ''}`}>
                             <p className="text-lg font-medium italic text-foreground"> 
                             My aim is to grow as a software engineer by building scalable, impactful applications that combine strong engineering principles with intelligent systems. I strive to deepen my expertise in full-stack development while continuously exploring machine learning and AI to solve real-world problems. By working in challenging environments and collaborating with driven teams, I aim to create software that is reliable, efficient, and meaningful at scale.
                             </p>
@@ -62,7 +67,7 @@ export const About=()=>{
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in hover-lift"
+                className={`glass p-6 rounded-2xl hover-lift opacity-0 ${isVisible ? 'animate-slide-up' : ''}`}
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
