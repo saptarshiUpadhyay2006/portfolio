@@ -43,7 +43,7 @@ export const Navbar=()=>{
                 <Button size="sm">Contact Me</Button>
             </div> */}
 
-            <a href="#contact">
+            <a href="#contact" className="hidden md:block">
             <Button size="sm">Contact Me</Button>
             </a>
 
