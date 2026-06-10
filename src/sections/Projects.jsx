@@ -25,8 +25,8 @@ const projects = [
         description: "GreenLens is a sustainability platform that helps users track, reduce their environmental impact through daily activity logging -rewarding sustainability through transparency and technology.It verifies eco-friendly actions using an ML-based system and rewards users with Green Tokens stored transparently on-chain. ",
         image: "/projects/pj8.png",
         tags: ["React", "TailwindCSS", "Express", "FastAPI"],
-        link: "https://green-lens-nine.vercel.app/",
-        github: "https://github.com/Deepsayan-Das/Green-Lens",
+        link: "https://greenlens-spuk.vercel.app/",
+        github: "https://github.com/saptarshiUpadhyay2006/Greenlens",
     },
     {
         title: "Binivex",
