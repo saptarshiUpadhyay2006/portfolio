@@ -7,12 +7,14 @@ import { Achievements } from "@/sections/Achievements";
 import { Testimonials } from "@/sections/Testimonials";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "./layout/Footer";
+import { VantaBackground } from "@/components/VantaBackground";
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden relative bg-background">
+      <VantaBackground opacity={0.35} className="fixed inset-0 w-full h-full pointer-events-none z-[2]" />
       <Navbar/>
-      <main>
+      <main className="relative">
         <Hero/>
         <About/>
         <Projects />

@@ -11,7 +11,7 @@ const achievements = [
     },
     {
         title: "LeetCode",
-        description: "Maximum Rating 1845 (Profile)",
+        description: "Maximum Rating 1881 (Knight)",
         icon: Star,
         link: "https://leetcode.com/u/nLMc7g3P5O/"
     },
@@ -44,7 +44,7 @@ export const Achievements = () => {
             {/* Background glowing orbs */}
             <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 z-0" />
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-highlight/5 rounded-full blur-3xl z-0" />
-            
+
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mx-auto max-w-3xl mb-20">
                     <span className={`text-secondary-foreground text-sm font-medium tracking-wider uppercase opacity-0 ${isVisible ? 'animate-slide-up' : ''}`}>
@@ -62,17 +62,17 @@ export const Achievements = () => {
                     {achievements.map((achievement, idx) => {
                         const Icon = achievement.icon;
                         return (
-                            <a 
+                            <a
                                 href={achievement.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                key={idx} 
+                                key={idx}
                                 className={`group block glass p-6 md:p-8 rounded-3xl hover-lift border border-primary/20 hover:border-primary/50 hover:glow-border transition-all duration-500 relative overflow-hidden opacity-0 ${isVisible ? 'animate-scale-in' : ''}`}
                                 style={{ animationDelay: `${(idx + 1) * 150}ms` }}
                             >
                                 {/* Subtle gradient background on hover */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                
+
                                 <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
                                     {/* Icon Container */}
                                     <div className="relative w-16 h-16 rounded-2xl bg-surface border border-primary/20 flex items-center justify-center shrink-0 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-500 overflow-hidden shadow-lg">
@@ -89,7 +89,7 @@ export const Achievements = () => {
                                             {achievement.description}
                                         </p>
                                     </div>
-                                    
+
                                     {/* Decorative arrow element */}
                                     <div className="hidden md:flex w-12 h-12 rounded-full glass items-center justify-center opacity-0 -translate-x-6 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 border-primary/30 group-hover:border-primary/50 group-hover:bg-primary/10">
                                         <ChevronRight className="w-6 h-6 text-primary" />
